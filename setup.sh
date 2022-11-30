@@ -2,14 +2,9 @@
 
 echo "Hello World"
 
-wget https://github.com/SpaceCowboy113/dev2/blob/master/.bashrc
-wget https://github.com/SpaceCowboy113/dev2/blob/master/.inputrc
-wget https://github.com/SpaceCowboy113/dev2/blob/master/.tmux.conf
-wget https://github.com/SpaceCowboy113/dev2/blob/master/.vimrc
+curl -o ~/test.bashrc https://raw.githubusercontent.com/SpaceCowboy113/dev2/master/.bashrc
+curl -o ~/test.inputrc https://raw.githubusercontent.com/SpaceCowboy113/dev2/master/.inputrc
+curl -o ~/test.tmux.conf https://raw.githubusercontent.com/SpaceCowboy113/dev2/master/.tmux.conf
+curl -o ~/test.vimrc https://raw.githubusercontent.com/SpaceCowboy113/dev2/master/.vimrc
 
-mv .bashrc ~
-mv .inputrc ~
-mv .tmux.conf ~
-mv .vimrc ~
-
-source ~/.bashrc
+sudo yum install tmux
