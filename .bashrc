@@ -46,3 +46,46 @@ alias ebash="vim ~/.bashrc"
 alias evim="vim ~/.vimrc"
 alias svim="source ~/.vimrc"
 alias hs='history | grep'
+
+# Preserve bash history in multiple terminal windows                                                                                                                                                                                                      # Preserve bash history in multiple terminal windows                                                                                                                                                    #
+HISTSIZE=9000
+HISTFILESIZE=$HISTSIZE
+HISTCONTROL=ignorespace:ignoredups
+
+_bash_history_sync() {
+  builtin history -a
+  HISTFILESIZE=$HISTSIZE
+  builtin history -c
+  builtin history -r
+}
+
+history() {
+  _bash_history_sync
+  builtin history "$@"
+}
+
+PROMPT_COMMAND=_bash_history_sync
+
+alias scripts="cd /dr01/scripts"
+alias qad="cd /dr01/qadapps/systest"
+alias yu="yab update"
+alias yi="yan info -all"
+alias yr="yab -r"
+alias ysh="yshell"
+alias yst="yab status"
+alias y="yab "
+
+alias tcl="tail -f /dr01/qadapps/systest/servers/tomcat-webui/logs/catalina.out"
+alias tal="tail -f /dr01/qadapps/systest/build/logs/as-qra.server.log"
+alias tyl="tail -f /dr01/qadapps/systest/build/logs/yab.log"
+
+alias ecl="vim /dr01/qadapps/systest/servers/tomcat-webui/logs/catalina.out"
+alias eal="vim /dr01/qadapps/systest/build/logs/as-qra.server.log"
+alias eyl="vim /dr01/qadapps/systest/build/logs/yab.log"
+
+alias econfig="vim /dr01/qadapps/systest/build/config/configuration.properties"
+alias sbash="source ~/.bashrc"
+alias ebash="vim ~/.bashrc"
+alias evim="vim ~/.vimrc"
+alias svim="source ~/.vimrc"
+alias hs='history | grep'
