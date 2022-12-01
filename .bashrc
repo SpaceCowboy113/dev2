@@ -26,6 +26,7 @@ alias dfh='df -h'
 alias sv='sudo vim'
 alias v='vim'
 alias e='exit'
+alias rimraf='rm -rf'
 
 # More Aliases
 alias ebash="vim ~/.bashrc"
