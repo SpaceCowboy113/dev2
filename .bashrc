@@ -6,7 +6,8 @@ fi
 
 ### Functions
 cdls() { echo  && cd "$@" && ls -CF; }
-gr () { grep -r "$@"; }
+gr () { grep "$@"; }
+rgr () { grep -r "$@"; }
 fn () { find ./ -name "$@"; }
 mkcd() { mkdir -p $1; cd $1; }
 
@@ -71,6 +72,7 @@ alias scripts="cd /dr01/scripts"
 alias qad="cd /dr01/qadapps/systest"
 alias yu="yab update"
 alias yi="yab info -all"
+alias yign="yab info -all | grep new"
 alias yr="yab -r"
 alias ysh="yshell"
 alias yst="yab status"
