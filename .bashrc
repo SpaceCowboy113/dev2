@@ -95,3 +95,4 @@ alias hs='history | grep'
 
 alias epost="vim /dr01/scripts/post-startup.sh"
 alias epre="vim /dr01/scripts/pre-startup.sh"
+alias dssMemoryDump="yab appserver-qra-memory-dump -nocompress"
