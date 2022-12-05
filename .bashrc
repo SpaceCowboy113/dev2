@@ -92,3 +92,6 @@ alias ebash="vim ~/.bashrc"
 alias evim="vim ~/.vimrc"
 alias svim="source ~/.vimrc"
 alias hs='history | grep'
+
+alias epost="vim /dr01/scripts/post-startup.sh"
+alias epre="vim /dr01/scripts/pre-startup.sh"
