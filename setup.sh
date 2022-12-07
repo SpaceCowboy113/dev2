@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+typeset ENV_LOCATION="/dr01/qadapps/systest"
+typeset YAB_LOG="${ENV_LOCATION}/build/logs/yab.log"
+typeset EMAIL="ji9@qad.com"
+typeset yab="/dr01/qadapps/yab/yab -notify.animated:false -a:${ENV_LOCATION}"
+
 echo "Setting up my development environment..."
 
 curl -o ~/.bashrc https://raw.githubusercontent.com/SpaceCowboy113/dev2/master/.bashrc
@@ -15,3 +20,9 @@ vim +PluginInstall +qall
 source ~/.bashrc
 bind -f ~/.inputrc
 tmux source-file ~/.tmux.conf
+
+# Start installation service
+${yab} module-installation-service-update tomcat-installation-service-start
+ 
+# Open ports for progress debugging
+sudo iptables -I INPUT -p tcp -m tcp --dport 3099 -j ACCEPT

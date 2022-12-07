@@ -61,3 +61,4 @@ if [[ "$(date +%H:%M)" < "07:30" || ${ignoreSchedule} == true ]]; then
     fi
 fi
 
+${yab} status | mail -s "Morning status - "$(hostname) ${EMAIL}
